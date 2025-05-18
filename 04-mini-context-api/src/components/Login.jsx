@@ -1,18 +1,19 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import userContext from "../context/UserContext";
 
 function Login() {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
 
-  const {setUser} = useContext(userContext)
+  // fetching the method from userContext
+  const { setUser } = useContext(userContext);
 
   const HandleSubmit = (e) => {
-
     e.preventDefault();
-    setUser({userName,password})
-
-
+    
+    // passing the values to the context api
+    setUser({ userName, password, email });
   };
 
   return (
@@ -23,8 +24,13 @@ function Login() {
         placeholder="username"
         value={userName}
         onChange={(e) => setUserName(e.target.value)}
-      />
-      {" "}
+      />{" "}
+      <input
+        type="text"
+        placeholder="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />{" "}
       <input
         type="password"
         placeholder="password"
