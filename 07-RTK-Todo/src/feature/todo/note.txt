@@ -1,0 +1,38 @@
+1. State : 
+
+  a. state refers to the entire JavaScript object tree that holds the current status of the application.
+  b. it can only be changed by dispatching an action that is processed by a reducer
+
+  c. ex: 
+            const state = {
+                    todos: [
+                      { id: 1, text: "hello world" },
+                      { id: 2, text: "learn redux" }
+                    ]
+                  };
+
+      A. Real-World Analogy:
+
+            Imagine the state is your home’s electricity system. It shows:
+            Lights are on/off,
+            Fan speed,
+            AC temperature.
+
+            This system never updates by itself — instead, you (the user) press switches or remotes. That brings us to actions.
+
+
+2. Action 
+
+  a. An action is a plain JavaScript object that describes what happened in the application
+  b. It must have a type field, and optionally a payload
+
+  c. example : 
+
+          {
+            type: 'todo/addTodo',  --> a string that identifies the action
+            payload: 'Buy milk'    --> any data needed to perform the update
+          }
+
+  d. addTodo("Buy milk") --> redux toolkit automatically converts it into the above example
+
+  

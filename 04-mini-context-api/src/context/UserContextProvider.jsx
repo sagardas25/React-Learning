@@ -12,7 +12,7 @@ const UserContextProvider = ({ children }) => {
     <userContext.Provider value={{ user, setUser }}>
       {children}
     </userContext.Provider>
-  );
+  );  
 };
 
 UserContextProvider.propTypes = {
